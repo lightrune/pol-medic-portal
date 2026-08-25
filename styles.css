@@ -231,6 +231,7 @@ a { color: inherit; }
 
 .status { padding: 8px 11px; }
 .status-live { color: var(--green); background: #e9f7f1; }
+.status-closed { color: #6f7883; background: #edf0f3; }
 .status-ready { color: var(--amber); background: #fff4df; }
 .status-ready.is-live { color: var(--green); background: #e9f7f1; }
 
