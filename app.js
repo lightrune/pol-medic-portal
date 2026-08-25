@@ -24,9 +24,10 @@
     return true;
   };
 
-  if (!applyLink(v2Link, config.v2) && v2Link) {
+  if (v2Link) {
     v2Link.classList.add("is-disabled");
     v2Link.setAttribute("aria-disabled", "true");
+    v2Link.removeAttribute("href");
   }
 
   const v3Enabled = applyLink(v3Link, config.v3);
@@ -40,7 +41,7 @@
   document.querySelectorAll('a[aria-disabled="true"]').forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
-      showToast("V3는 게시와 전용 API 연결이 완료된 뒤 이용할 수 있습니다.");
+      showToast(link.dataset.disabledMessage || "현재 이용할 수 없는 버전입니다.");
     });
   });
 })();
