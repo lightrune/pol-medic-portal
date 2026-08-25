@@ -6,20 +6,20 @@
     <meta name="theme-color" content="#0b4fb5" />
     <meta
       name="description"
-      content="경찰관 건강검진 추천 문진 Pol-메딕 V2 운영판과 V3 개선판을 선택하는 공식 진입페이지"
+      content="V2 테스트 종료 후 Pol-메딕 V3 개선판으로 연결하는 공식 진입페이지"
     />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Pol-메딕 | 건강검진 문진 선택" />
     <meta
       property="og:description"
-      content="현재 운영 중인 V2와 야간작업 특수검진을 정교화한 V3 중 필요한 문진을 선택하세요."
+      content="V2 웹 테스트는 종료되었으며 개선된 V3 문진을 이용할 수 있습니다."
     />
     <meta property="og:image" content="https://lightrune.github.io/pol-medic-portal/og.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <title>Pol-메딕 | V2·V3 문진 선택</title>
-    <link rel="stylesheet" href="./styles.css" />
-    <script src="./config.js?v=20260823-2" defer></script>
-    <script src="./app.js" defer></script>
+    <title>Pol-메딕 | V3 문진 이용</title>
+    <link rel="stylesheet" href="./styles.css?v=20260825-1" />
+    <script src="./config.js?v=20260825-1" defer></script>
+    <script src="./app.js?v=20260825-1" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#versionSelection">문진 선택으로 바로가기</a>
@@ -37,9 +37,9 @@
 
       <section class="hero">
         <p class="eyebrow">검진 전, 필요한 질문만 더 정확하게</p>
-        <h1>나에게 맞는<br /><em>Pol-메딕</em>을 선택하세요</h1>
+        <h1>개선된<br /><em>Pol-메딕 V3</em>를 이용하세요</h1>
         <p class="hero-copy">
-          V2 운영판과 V3 개선판은 서로 독립적으로 작동합니다. 버전을 선택하면 해당 문진 서비스로 안전하게 이동합니다.
+          V2 웹 테스트는 종료되었습니다. 기존 V2 자료는 삭제하지 않고 보관하며, 새 문진은 V3에서만 진행합니다.
         </p>
         <div class="hero-points" aria-label="서비스 특징">
           <span>버튼 중심 간편 문진</span>
@@ -54,17 +54,17 @@
         <article class="version-card version-card-v2">
           <div class="card-topline">
             <span class="version-label">V2</span>
-            <span class="status status-live"><i aria-hidden="true"></i> 운영 중</span>
+            <span class="status status-closed"><i aria-hidden="true"></i> 테스트 종료</span>
           </div>
-          <h3>현재 운영판</h3>
-          <p>현장에서 사용 중인 안정화된 건강검진 추천 문진입니다.</p>
+          <h3>보관 버전</h3>
+          <p>기존 결과 비교와 이력 관리를 위해 보관하지만 웹에서는 새 문진을 시작할 수 없습니다.</p>
           <ul>
             <li><strong>177개</strong> 질문 후보에서 필요한 문항만 진행</li>
             <li>일반검진·생활습관·직무환경 중심</li>
             <li>기존 서비스 결과와 동일한 운영 기준</li>
           </ul>
-          <a id="v2Link" class="primary-link" href="#">
-            V2 문진 시작하기
+          <a id="v2Link" class="primary-link is-disabled" href="#" aria-disabled="true" data-disabled-message="V2 웹 테스트가 종료되어 새 문진을 시작할 수 없습니다.">
+            V2 테스트 종료
             <span aria-hidden="true">→</span>
           </a>
         </article>
@@ -72,7 +72,7 @@
         <article class="version-card version-card-v3">
           <div class="card-topline">
             <span class="version-label">V3</span>
-            <span id="v3Status" class="status status-ready"><i aria-hidden="true"></i> 준비 중</span>
+            <span id="v3Status" class="status status-ready"><i aria-hidden="true"></i> 연결 확인 중</span>
           </div>
           <h3>개선 개발판</h3>
           <p>검진자료를 질문 준비의 토대로 활용하고 불필요한 질문을 줄인 개선 문진입니다.</p>
@@ -81,28 +81,28 @@
             <li>환경·생리현상 정보를 후속질문에 반영</li>
             <li>특수검진은 야간근무 관련 항목으로 한정</li>
           </ul>
-          <a id="v3Link" class="primary-link secondary-link is-disabled" href="#" aria-disabled="true">
-            <span id="v3LinkLabel">V3 게시 후 이용 가능</span>
+          <a id="v3Link" class="primary-link secondary-link is-disabled" href="#" aria-disabled="true" data-disabled-message="V3 연결 상태를 확인하고 있습니다.">
+            <span id="v3LinkLabel">V3 연결 확인 중</span>
             <span aria-hidden="true">→</span>
           </a>
-          <p id="v3Notice" class="availability-note">V3 게시와 전용 API 연결이 끝나면 이 버튼이 활성화됩니다.</p>
+          <p id="v3Notice" class="availability-note">V3 연결 상태를 확인하고 있습니다.</p>
         </article>
       </section>
 
       <section class="guide" aria-labelledby="guideTitle">
         <div>
           <p class="guide-kicker">이용 안내</p>
-          <h2 id="guideTitle">어떤 버전을 선택해야 하나요?</h2>
+          <h2 id="guideTitle">현재 이용 가능한 버전</h2>
         </div>
         <div class="guide-copy">
-          <p><strong>현재 검진을 진행하려면 V2</strong>를 선택하세요.</p>
-          <p><strong>V3 시범운영이 시작된 뒤에는 V3</strong>를 선택해 개선된 질문 흐름을 비교할 수 있습니다.</p>
+          <p><strong>새 문진은 V3에서만 진행</strong>해 주세요.</p>
+          <p>V2는 결과 비교와 버전 이력을 위해 보관하며 웹 접근은 차단했습니다.</p>
         </div>
       </section>
 
       <footer>
         <p><strong>Pol-메딕</strong>은 검진 준비를 돕는 문진 서비스이며 의료진의 진단을 대신하지 않습니다.</p>
-        <p>이 페이지에서는 건강정보를 입력받거나 저장하지 않습니다.</p>
+        <p>이 페이지에서는 건강정보를 입력받거나 저장하지 않습니다. · 최종 업데이트 2026.08.25</p>
       </footer>
     </main>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
