@@ -39,8 +39,8 @@
   if (v3Enabled) {
     v3Status?.classList.add("is-live");
     if (v3Status) v3Status.innerHTML = '<i aria-hidden="true"></i> 시범 운영 중';
-    if (v3LinkLabel) v3LinkLabel.textContent = "V3 문진 시작하기";
-    if (v3Notice) v3Notice.textContent = "V3 시범운영 결과는 V2와 분리해 관리됩니다.";
+    if (v3LinkLabel) v3LinkLabel.textContent = "폴메딕-문진버전 시작하기";
+    if (v3Notice) v3Notice.textContent = "문진버전 결과는 상담버전과 분리해 관리됩니다.";
   }
 
   document.querySelectorAll('a[aria-disabled="true"]').forEach((link) => {
