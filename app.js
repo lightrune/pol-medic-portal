@@ -1,6 +1,9 @@
 (() => {
   const config = window.POL_MEDIC_PORTAL_CONFIG || {};
   const v2Link = document.querySelector("#v2Link");
+  const v2Status = document.querySelector("#v2Status");
+  const v2LinkLabel = document.querySelector("#v2LinkLabel");
+  const v2Notice = document.querySelector("#v2Notice");
   const v3Link = document.querySelector("#v3Link");
   const v3Status = document.querySelector("#v3Status");
   const v3LinkLabel = document.querySelector("#v3LinkLabel");
@@ -24,10 +27,12 @@
     return true;
   };
 
-  if (v2Link) {
-    v2Link.classList.add("is-disabled");
-    v2Link.setAttribute("aria-disabled", "true");
-    v2Link.removeAttribute("href");
+  const v2Enabled = applyLink(v2Link, config.v2);
+  if (v2Enabled) {
+    v2Status?.classList.add("is-live");
+    if (v2Status) v2Status.innerHTML = '<i aria-hidden="true"></i> 상담 운영 중';
+    if (v2LinkLabel) v2LinkLabel.textContent = "상담버전 시작하기";
+    if (v2Notice) v2Notice.textContent = "기존 V2 대신 서술형 상담버전으로 연결됩니다.";
   }
 
   const v3Enabled = applyLink(v3Link, config.v3);
