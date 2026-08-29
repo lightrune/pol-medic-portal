@@ -32,7 +32,7 @@
     v2Status?.classList.add("is-live");
     if (v2Status) v2Status.innerHTML = '<i aria-hidden="true"></i> 상담 운영 중';
     if (v2LinkLabel) v2LinkLabel.textContent = "상담버전 시작하기";
-    if (v2Notice) v2Notice.textContent = "기존 V2 대신 서술형 상담버전으로 연결됩니다.";
+    if (v2Notice) v2Notice.textContent = "폴-메딕-상담버전으로 연결됩니다.";
   }
 
   const v3Enabled = applyLink(v3Link, config.v3);
